@@ -22,9 +22,7 @@ export const Fetch = memo(() => {
     try {
       const response = await fetch(URL, {
         method: 'POSt',
-        body: JSON.stringify({
-          ...body,
-        }),
+        body: JSON.stringify(body),
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
@@ -42,9 +40,7 @@ export const Fetch = memo(() => {
     try {
       await fetch(`${URL}/${id}`, {
         method: 'PUT',
-        body: JSON.stringify({
-          ...body,
-        }),
+        body: JSON.stringify(body),
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
