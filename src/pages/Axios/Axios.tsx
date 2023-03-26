@@ -35,9 +35,9 @@ export const Axios = memo(() => {
   }
 
   // Update
-  const handleUpdatePostItem = async (id: number, body: PostDTO) => {
+  const handleUpdatePostItem = async (body: PostDTO) => {
     try {
-      await axios.put(`${URL}/${id}`, JSON.stringify(body), {
+      await axios.put(`${URL}/${body.id}`, JSON.stringify(body), {
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },

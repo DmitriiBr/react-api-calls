@@ -1,12 +1,11 @@
 import { memo } from 'react'
 import { PostDTO } from '../models/Post/Post'
 import { PostListItem } from './PostListItem'
-import PreviousMap from 'postcss/lib/previous-map'
 
 interface Props {
   posts: PostDTO[]
   onDelete: (id: number) => Promise<void>
-  onUpdate: (id: number, body: PostDTO) => Promise<void>
+  onUpdate: (body: PostDTO) => Promise<void>
   onCreate: (body: Omit<PostDTO, 'id'>) => Promise<void>
 }
 

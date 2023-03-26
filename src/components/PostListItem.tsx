@@ -2,7 +2,7 @@ import React, { memo, useState } from 'react'
 import { PostDTO } from '../models/Post/Post'
 
 interface Props extends Pick<PostDTO, 'title' | 'id'> {
-  onUpdate: (ie: number, body: PostDTO) => Promise<void>
+  onUpdate: (body: PostDTO) => Promise<void>
   onDelete: (id: number) => Promise<void>
 }
 
@@ -12,7 +12,7 @@ export const PostListItem = memo(({ id, title, onDelete, onUpdate }: Props) => {
 
   const handleStartEdit = () => setEdit(true)
   const handleSave = async () => {
-    await onUpdate(id, {
+    await onUpdate({
       id,
       title: postTitle,
       body: 'Changed body.',

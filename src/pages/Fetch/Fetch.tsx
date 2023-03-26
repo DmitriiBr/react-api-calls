@@ -36,9 +36,9 @@ export const Fetch = memo(() => {
   }
 
   // Update
-  const handleUpdatePostItem = async (id: number, body: PostDTO) => {
+  const handleUpdatePostItem = async (body: PostDTO) => {
     try {
-      await fetch(`${URL}/${id}`, {
+      await fetch(`${URL}/${body.id}`, {
         method: 'PUT',
         body: JSON.stringify(body),
         headers: {
